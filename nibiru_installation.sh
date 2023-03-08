@@ -44,7 +44,8 @@ fi
 nibid init $NIBIRU_NAME --chain-id nibiru-itn-1
 
 wget -O $HOME/.nibid/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nibiru/genesis.json"
-wget -O $HOME/.nibid/config/addrbook.json "https://ss-t.nibiru.nodestake.top/addrbook.json"
+#wget -O $HOME/.nibid/config/addrbook.json "https://ss-t.nibiru.nodestake.top/addrbook.json"
+wget -O $HOME/.nibid/config/addrbook.json "https://snapshot.nibiru.spt-node.xyz/nibiru/addrbook.json"
 
 nibid config chain-id nibiru-itn-1
 nibid config keyring-backend os
