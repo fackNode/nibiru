@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#sup
+
 curl -s "https://nodes.fackblock.com/api/logo.sh" | sh && sleep 2
 
 fmt=`tput setaf 45`
