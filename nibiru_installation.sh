@@ -9,18 +9,9 @@ scss="\e[32m"
 
 echo -e "${fmt}\nSetting up dependencies / Устанавливаем необходимые зависимости${end}" && sleep 1
 
-if ! go version; then
-    sudo rm -rf /usr/local/go
-    curl -Ls https://go.dev/dl/go1.19.5.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/local
-    eval $(echo 'export PATH=$PATH:/usr/local/go/bin' | sudo tee /etc/profile.d/golang.sh)
-    eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
+apt update && apt install make clang pkg-config libssl-dev build-essential git jq ncdu bsdmainutils htop -y < "/dev/null"
 
-if ! go version; then
-    echo "${err}Installation of Go failed. Exiting.${end}" && sleep 1
-    exit 1
-fi
-
-fi
+. <(wget -qO- https://github.com/fackNode/requirements/raw/main/go.sh)
 
 if [ ! $NIBIRU_NAME ]; then
 	echo -e "${err}You don't have node name! / Нету имени ноды! ${end}" && sleep 1
